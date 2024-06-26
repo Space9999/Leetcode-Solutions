@@ -1,0 +1,20 @@
+class RandomizedCollection {
+    private ArrayList<Integer> list;
+    public RandomizedCollection() {
+        list = new ArrayList<Integer>();
+    }
+    
+    public boolean insert(int val) {
+        if (list.contains(val)) {list.add(val); return false;}
+        else {list.add(val); return true;}
+    }
+    
+    public boolean remove(int val) {
+        if (list.contains(val)) {list.remove(Integer.valueOf(val)); return true;}
+        return false;
+    }
+    
+    public int getRandom() {
+        return list.get((int)(Math.random() * list.size()));
+    }
+}
